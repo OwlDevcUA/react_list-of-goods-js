@@ -30,10 +30,10 @@ function sortGoods(goods, sortType) {
 export const App = () => {
   const [selectedSortType, setSortType] = useState('');
   const [reversed, setReversed] = useState(false);
-  const visibaleGoods = sortGoods(goodsFromServer, selectedSortType);
+  let visibaleGoods = sortGoods(goodsFromServer, selectedSortType);
 
   if (reversed) {
-    visibaleGoods.reverse();
+    visibaleGoods = [...visibaleGoods].reverse();
   }
 
   return (
